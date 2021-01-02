@@ -6,8 +6,11 @@ import android.view.Menu
 import android.view.MenuItem
 import ie.wit.daocompanionapp.R
 import ie.wit.daocompanionapp.main.MainApp
+import ie.wit.daocompanionapp.models.CharacterModel
 import ie.wit.daocompanionapp.models.PlaythroughModel
+import kotlinx.android.synthetic.main.activity_character.*
 import kotlinx.android.synthetic.main.activity_playthrough.*
+import kotlinx.android.synthetic.main.activity_playthrough.toolbarAdd
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
@@ -15,6 +18,8 @@ import org.jetbrains.anko.toast
 class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
 
     var playthrough = PlaythroughModel()
+    var character = CharacterModel()
+    var characters = ArrayList<CharacterModel>()
     lateinit var app : MainApp
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,22 +30,54 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
         info("Playthrough Activity started...")
         app = application as MainApp
 
+        var edit = false
+
         if(intent.hasExtra("playthrough_edit")){
+            edit = true
             playthrough = intent.extras?.getParcelable<PlaythroughModel>("playthrough_edit")!!
             playthroughPlayer.setText(playthrough.player)
+            btnPlayAdd.setText(R.string.save_playthrough)
+        }
+
+        btnCharAdd.setOnClickListener {
+            info("Enter Character Details...")
+            setContentView(R.layout.activity_character)
+
+            btnAddCharacter.setOnClickListener {
+                character.name = name.text.toString()
+                character.gender = gender.text.toString()
+                character.race = race.text.toString()
+                character.background = background.text.toString()
+                if (character.name.isNotEmpty() && character.gender.isNotEmpty()
+                    && character.race.isNotEmpty() && character.background.isNotEmpty()){
+                    info("$name Added!")
+                    app.characters.add(character.copy())
+                    for (i in characters.indices){
+                        info("Character[$i]: ${app.characters[i]}")
+                    }
+                }
+                else{
+                    toast("Please Enter Character Details...")
+                }
+            }
         }
 
         btnPlayAdd.setOnClickListener {
             playthrough.player = playthroughPlayer.text.toString()
-            if(playthrough.player.isNotEmpty()){
-                app.playthroughs.create(playthrough.copy())
-                info("Add Playthrough Button pressed: ${playthrough}")
-                setResult(AppCompatActivity.RESULT_OK)
-                finish()
+            if(playthrough.player.isEmpty()){
+                toast(R.string.enter_playthough_player)
             }
             else{
-                toast("Please enter player name")
+                if(edit){
+                    app.playthroughs.update(playthrough.copy())
+                }
+                else{
+                    app.playthroughs.create(playthrough.copy())
+                }
             }
+            info("Add Button pressed: $playthroughPlayer")
+            setResult(AppCompatActivity.RESULT_OK)
+            finish()
         }
     }
 

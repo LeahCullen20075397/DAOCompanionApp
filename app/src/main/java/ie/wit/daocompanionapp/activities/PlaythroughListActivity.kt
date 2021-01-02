@@ -1,5 +1,6 @@
 package ie.wit.daocompanionapp.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
@@ -42,5 +43,10 @@ class PlaythroughListActivity: AppCompatActivity(), PlaythroughListener {
             R.id.item_add -> startActivityForResult<PlaythroughActivity>(0)
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        recyclerView.adapter?.notifyDataSetChanged()
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }

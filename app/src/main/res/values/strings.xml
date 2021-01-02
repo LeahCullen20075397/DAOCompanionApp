@@ -1,7 +1,21 @@
 <resources>
     <string name="app_name">DAO Companion App</string>
+
     <string name="button_addPlaythrough">Add Playthrough</string>
     <string name="hint_playthroughPlayer">Player</string>
     <string name="menu_addPlaythrough">Add</string>
     <string name="menu_cancelPlaythrough">Cancel</string>
+    <string name="enter_playthough_player">Please Enter Player Name</string>
+    <string name="save_playthrough">Save Playthrough</string>
+    <string name="addPlaythrough">Please Enter Your Name</string>
+
+    <string name="button_addCharacter">Add Character</string>
+    <string name="name">Please Enter Character Name</string>
+    <string name="hint_characterName">Character Name</string>
+    <string name="gender">Please Enter Character Gender</string>
+    <string name="hint_characterGender">Character Gender</string>
+    <string name="race">Please Enter Character Race</string>
+    <string name="hint_characterRace">Character Race</string>
+    <string name="background">Please Enter Character Background</string>
+    <string name="hint_characterBackground">Character Background</string>
 </resources>
