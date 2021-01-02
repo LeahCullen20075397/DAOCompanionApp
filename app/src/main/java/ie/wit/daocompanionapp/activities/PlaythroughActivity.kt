@@ -25,6 +25,11 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
         info("Playthrough Activity started...")
         app = application as MainApp
 
+        if(intent.hasExtra("playthrough_edit")){
+            playthrough = intent.extras?.getParcelable<PlaythroughModel>("playthrough_edit")!!
+            playthroughPlayer.setText(playthrough.player)
+        }
+
         btnPlayAdd.setOnClickListener {
             playthrough.player = playthroughPlayer.text.toString()
             if(playthrough.player.isNotEmpty()){

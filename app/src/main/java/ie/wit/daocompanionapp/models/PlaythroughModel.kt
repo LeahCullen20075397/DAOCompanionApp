@@ -4,4 +4,5 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class PlaythroughModel (var player: String = "") : Parcelable
+data class PlaythroughModel (   var id: Long = 0,
+                                var player: String = "") : Parcelable
