@@ -3,4 +3,5 @@
     <string name="button_addPlaythrough">Add Playthrough</string>
     <string name="hint_playthroughPlayer">Player</string>
     <string name="menu_addPlaythrough">Add</string>
+    <string name="menu_cancelPlaythrough">Cancel</string>
 </resources>

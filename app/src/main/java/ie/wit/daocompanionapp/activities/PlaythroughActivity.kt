@@ -2,6 +2,8 @@ package ie.wit.daocompanionapp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import ie.wit.daocompanionapp.R
 import ie.wit.daocompanionapp.main.MainApp
 import ie.wit.daocompanionapp.models.PlaythroughModel
@@ -18,6 +20,8 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_playthrough)
+        toolbarAdd.title = title
+        setSupportActionBar(toolbarAdd)
         info("Playthrough Activity started...")
         app = application as MainApp
 
@@ -36,5 +40,19 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
                 toast("Please enter player name")
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_playthrough, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.item_cancel -> {
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

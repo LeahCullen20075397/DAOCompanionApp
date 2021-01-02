@@ -41,31 +41,3 @@ class PlaythroughListActivity: AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 }
-
-class PlaythroughAdapter constructor(private var playthroughs: List<PlaythroughModel>) :
-        RecyclerView.Adapter<PlaythroughAdapter.MainHolder>(){
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder{
-        return MainHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.card_playthrough,
-                parent,
-                false
-            )
-        )
-    }
-
-    override fun onBindViewHolder(holder: MainHolder, position: Int){
-        val playthrough = playthroughs[holder.adapterPosition]
-        holder.bind(playthrough)
-    }
-
-    override fun getItemCount(): Int = playthroughs.size
-
-    class MainHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView){
-
-        fun bind(playthrough: PlaythroughModel){
-            itemView.playthroughPlayer.text = playthrough.player
-        }
-    }
-}
