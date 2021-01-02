@@ -2,4 +2,5 @@
     <string name="app_name">DAO Companion App</string>
     <string name="button_addPlaythrough">Add Playthrough</string>
     <string name="hint_playthroughPlayer">Player</string>
+    <string name="menu_addPlaythrough">Add</string>
 </resources>

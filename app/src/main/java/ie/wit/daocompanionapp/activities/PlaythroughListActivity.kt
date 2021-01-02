@@ -2,6 +2,7 @@ package ie.wit.daocompanionapp.activities
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -25,7 +26,16 @@ class PlaythroughListActivity: AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = PlaythroughAdapter(app.playthroughs)
+
+        toolbar.title = title
+        setSupportActionBar(toolbar)
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
 }
 
 class PlaythroughAdapter constructor(private var playthroughs: List<PlaythroughModel>) :
