@@ -28,11 +28,8 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
         btnPlayAdd.setOnClickListener {
             playthrough.player = playthroughPlayer.text.toString()
             if(playthrough.player.isNotEmpty()){
-                app.playthroughs.add(playthrough.copy())
+                app.playthroughs.create(playthrough.copy())
                 info("Add Playthrough Button pressed: ${playthrough}")
-                for (i in app.playthroughs.indices){
-                    info("Playthrough[$i]:${app.playthroughs[i]}")
-                }
                 setResult(AppCompatActivity.RESULT_OK)
                 finish()
             }
