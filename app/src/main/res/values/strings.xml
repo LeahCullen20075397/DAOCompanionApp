@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DAO Companion App</string>
+    <string name="button_addPlaythrough">Add Playthrough</string>
 </resources>
