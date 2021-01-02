@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import ie.wit.daocompanionapp.R
 import ie.wit.daocompanionapp.main.MainApp
+import ie.wit.daocompanionapp.models.PlaythroughModel
 import kotlinx.android.synthetic.main.activity_playthrough_list.*
+import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivityForResult
 
-class PlaythroughListActivity: AppCompatActivity() {
+class PlaythroughListActivity: AppCompatActivity(), PlaythroughListener {
 
     lateinit var app: MainApp
 
@@ -20,10 +22,14 @@ class PlaythroughListActivity: AppCompatActivity() {
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = PlaythroughAdapter(app.playthroughs.findAll())
+        recyclerView.adapter = PlaythroughAdapter(app.playthroughs.findAll(), this)
 
         toolbar.title = title
         setSupportActionBar(toolbar)
+    }
+
+    override fun onPlaythroughClick(playthrough: PlaythroughModel) {
+        startActivityForResult(intentFor<PlaythroughActivity>(),0)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

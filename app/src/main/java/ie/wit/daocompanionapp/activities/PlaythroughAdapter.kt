@@ -8,8 +8,14 @@ import ie.wit.daocompanionapp.R
 import ie.wit.daocompanionapp.models.PlaythroughModel
 import kotlinx.android.synthetic.main.card_playthrough.view.*
 
-class PlaythroughAdapter constructor(private val playthroughs: List<PlaythroughModel>) :
-    RecyclerView.Adapter<PlaythroughAdapter.MainHolder>() {
+interface PlaythroughListener{
+    fun onPlaythroughClick(playthrough: PlaythroughModel)
+}
+
+class PlaythroughAdapter constructor(
+    private var playthroughs: List<PlaythroughModel>,
+    private val listener: PlaythroughListener
+    ) : RecyclerView.Adapter<PlaythroughAdapter.MainHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder{
         return MainHolder(
@@ -23,15 +29,16 @@ class PlaythroughAdapter constructor(private val playthroughs: List<PlaythroughM
 
     override fun onBindViewHolder(holder: MainHolder, position: Int) {
         val playthrough = playthroughs[holder.adapterPosition]
-        holder.bind(playthrough)
+        holder.bind(playthrough, listener)
     }
 
     override fun getItemCount(): Int = playthroughs.size
 
     class MainHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        fun bind(playthrough: PlaythroughModel){
+        fun bind(playthrough: PlaythroughModel, listener: PlaythroughListener){
             itemView.playthroughPlayer.text = playthrough.player
+            itemView.setOnClickListener { listener.onPlaythroughClick(playthrough) }
         }
     }
 }
