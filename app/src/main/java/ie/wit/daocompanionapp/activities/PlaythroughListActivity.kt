@@ -1,10 +1,7 @@
 package ie.wit.daocompanionapp.activities
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +10,7 @@ import ie.wit.daocompanionapp.main.MainApp
 import ie.wit.daocompanionapp.models.PlaythroughModel
 import kotlinx.android.synthetic.main.card_playthrough.view.*
 import kotlinx.android.synthetic.main.activity_playthrough_list.*
+import org.jetbrains.anko.startActivityForResult
 
 class PlaythroughListActivity: AppCompatActivity() {
 
@@ -36,6 +34,12 @@ class PlaythroughListActivity: AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.item_add -> startActivityForResult<PlaythroughActivity>(0)
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
 
 class PlaythroughAdapter constructor(private var playthroughs: List<PlaythroughModel>) :

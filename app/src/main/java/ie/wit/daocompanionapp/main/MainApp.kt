@@ -12,8 +12,5 @@ class MainApp: Application(), AnkoLogger {
     override fun onCreate() {
         super.onCreate()
         info("Playthrough started...")
-        playthroughs.add(PlaythroughModel("Leah"))
-        playthroughs.add(PlaythroughModel("Susie"))
-        playthroughs.add(PlaythroughModel("Kevin"))
     }
 }

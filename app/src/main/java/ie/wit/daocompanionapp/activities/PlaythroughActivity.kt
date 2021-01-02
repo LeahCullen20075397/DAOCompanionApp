@@ -29,6 +29,8 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
                 for (i in app.playthroughs.indices){
                     info("Playthrough[$i]:${app.playthroughs[i]}")
                 }
+                setResult(AppCompatActivity.RESULT_OK)
+                finish()
             }
             else{
                 toast("Please enter player name")
