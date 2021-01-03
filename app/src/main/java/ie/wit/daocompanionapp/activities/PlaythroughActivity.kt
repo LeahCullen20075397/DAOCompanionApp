@@ -38,7 +38,7 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
             playthroughPlayer.setText(playthrough.player)
             btnPlayAdd.setText(R.string.save_playthrough)
         }
-
+/*
         btnCharAdd.setOnClickListener {
             info("Enter Character Details...")
             setContentView(R.layout.activity_character)
@@ -51,16 +51,16 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
                 if (character.name.isNotEmpty() && character.gender.isNotEmpty()
                     && character.race.isNotEmpty() && character.background.isNotEmpty()){
                     info("$name Added!")
-                    app.characters.add(character.copy())
+                    characters.add(character.copy())
                     for (i in characters.indices){
-                        info("Character[$i]: ${app.characters[i]}")
+                        info("Character[$i]: ${characters[i]}")
                     }
                 }
                 else{
                     toast("Please Enter Character Details...")
                 }
             }
-        }
+        }*/
 
         btnPlayAdd.setOnClickListener {
             playthrough.player = playthroughPlayer.text.toString()

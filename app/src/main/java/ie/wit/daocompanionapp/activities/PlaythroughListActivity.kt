@@ -21,12 +21,12 @@ class PlaythroughListActivity: AppCompatActivity(), PlaythroughListener {
         setContentView(R.layout.activity_playthrough_list)
         app = application as MainApp
 
-        val layoutManager = LinearLayoutManager(this)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = PlaythroughAdapter(app.playthroughs.findAll(), this)
-
         toolbar.title = title
         setSupportActionBar(toolbar)
+
+        val layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = layoutManager
+        loadPlaythroughs()
     }
 
     override fun onPlaythroughClick(playthrough: PlaythroughModel) {
@@ -46,7 +46,16 @@ class PlaythroughListActivity: AppCompatActivity(), PlaythroughListener {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        recyclerView.adapter?.notifyDataSetChanged()
+        loadPlaythroughs()
         super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    private fun loadPlaythroughs(){
+        showPlaythroughs(app.playthroughs.findAll())
+    }
+
+    fun showPlaythroughs(playthroughs: List<PlaythroughModel>){
+        recyclerView.adapter = PlaythroughAdapter(playthroughs, this)
+        recyclerView.adapter?.notifyDataSetChanged()
     }
 }
