@@ -20,6 +20,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activities.CharacterActivity"/>
+
+
     </application>
 
 </manifest>

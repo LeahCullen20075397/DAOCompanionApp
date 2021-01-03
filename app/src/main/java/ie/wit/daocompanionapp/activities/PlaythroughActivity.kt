@@ -1,5 +1,6 @@
 package ie.wit.daocompanionapp.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -13,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_playthrough.*
 import kotlinx.android.synthetic.main.activity_playthrough.toolbarAdd
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
+import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
 
 class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
@@ -38,29 +40,10 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
             playthroughPlayer.setText(playthrough.player)
             btnPlayAdd.setText(R.string.save_playthrough)
         }
-/*
-        btnCharAdd.setOnClickListener {
-            info("Enter Character Details...")
-            setContentView(R.layout.activity_character)
 
-            btnAddCharacter.setOnClickListener {
-                character.name = name.text.toString()
-                character.gender = gender.text.toString()
-                character.race = race.text.toString()
-                character.background = background.text.toString()
-                if (character.name.isNotEmpty() && character.gender.isNotEmpty()
-                    && character.race.isNotEmpty() && character.background.isNotEmpty()){
-                    info("$name Added!")
-                    characters.add(character.copy())
-                    for (i in characters.indices){
-                        info("Character[$i]: ${characters[i]}")
-                    }
-                }
-                else{
-                    toast("Please Enter Character Details...")
-                }
-            }
-        }*/
+        btnCharAdd.setOnClickListener {
+           startActivityForResult(intentFor<CharacterActivity>(),0)
+        }
 
         btnPlayAdd.setOnClickListener {
             playthrough.player = playthroughPlayer.text.toString()
@@ -97,5 +80,15 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when(requestCode){
+            0 -> {
+                character = data?.getParcelableExtra<CharacterModel>("character")!!
+                playthrough.characters.add(character)
+            }
+        }
     }
 }
