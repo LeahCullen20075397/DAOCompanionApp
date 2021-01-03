@@ -31,6 +31,10 @@ class PlaythroughMemStore : PlaythroughStore, AnkoLogger {
         }
     }
 
+    override fun delete(playthrough: PlaythroughModel) {
+        playthroughs.remove(playthrough)
+    }
+
     fun logAll(){
         playthroughs.forEach { info("${it}") }
     }

@@ -4,6 +4,7 @@
     <string name="button_addPlaythrough">Add Playthrough</string>
     <string name="hint_playthroughPlayer">Player</string>
     <string name="menu_addPlaythrough">Add</string>
+    <string name="menu_deletePlaythrough">Delete</string>
     <string name="menu_cancelPlaythrough">Cancel</string>
     <string name="enter_playthough_player">Please Enter Player Name</string>
     <string name="save_playthrough">Save Playthrough</string>

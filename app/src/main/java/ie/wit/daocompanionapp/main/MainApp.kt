@@ -2,6 +2,7 @@ package ie.wit.daocompanionapp.main
 
 import android.app.Application
 import ie.wit.daocompanionapp.models.CharacterModel
+import ie.wit.daocompanionapp.models.PlaythroughJSONStore
 import ie.wit.daocompanionapp.models.PlaythroughMemStore
 import ie.wit.daocompanionapp.models.PlaythroughStore
 import org.jetbrains.anko.AnkoLogger
@@ -13,7 +14,7 @@ class MainApp: Application(), AnkoLogger {
 
     override fun onCreate() {
         super.onCreate()
-        playthroughs = PlaythroughMemStore()
+        playthroughs = PlaythroughJSONStore(applicationContext)
         info("Playthrough started...")
     }
 }
