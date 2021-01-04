@@ -8,7 +8,9 @@ import android.view.MenuItem
 import ie.wit.daocompanionapp.R
 import ie.wit.daocompanionapp.main.MainApp
 import ie.wit.daocompanionapp.models.CharacterModel
+import ie.wit.daocompanionapp.models.ChoiceModel
 import ie.wit.daocompanionapp.models.PlaythroughModel
+import ie.wit.daocompanionapp.models.RelationshipModel
 import kotlinx.android.synthetic.main.activity_character.*
 import kotlinx.android.synthetic.main.activity_playthrough.*
 import kotlinx.android.synthetic.main.activity_playthrough.toolbarAdd
@@ -21,7 +23,8 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
 
     var playthrough = PlaythroughModel()
     var character = CharacterModel()
-    var characters = ArrayList<CharacterModel>()
+    var choice = ChoiceModel()
+    var relationship = RelationshipModel()
     lateinit var app : MainApp
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +46,14 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
 
         btnCharAdd.setOnClickListener {
            startActivityForResult(intentFor<CharacterActivity>(),0)
+        }
+
+        btnChoiceAdd.setOnClickListener {
+            startActivityForResult(intentFor<ChoiceActivity>(),1)
+        }
+
+        btnRelationshipAdd.setOnClickListener {
+            startActivityForResult(intentFor<RelationshipActivity>(),2)
         }
 
         btnPlayAdd.setOnClickListener {
@@ -88,6 +99,14 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
             0 -> {
                 character = data?.getParcelableExtra<CharacterModel>("character")!!
                 playthrough.characters.add(character)
+            }
+            1 -> {
+                choice = data?.getParcelableExtra<ChoiceModel>("choice")!!
+                playthrough.choices.add(choice)
+            }
+            2 -> {
+                relationship = data?.getParcelableExtra<RelationshipModel>("relationship")!!
+                playthrough.relationships.add(relationship)
             }
         }
     }

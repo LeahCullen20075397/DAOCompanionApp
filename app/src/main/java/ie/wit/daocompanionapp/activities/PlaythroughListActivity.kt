@@ -31,7 +31,6 @@ class PlaythroughListActivity: AppCompatActivity(), PlaythroughListener {
 
     override fun onPlaythroughClick(playthrough: PlaythroughModel) {
         startActivityForResult(intentFor<PlaythroughActivity>().putExtra("playthrough_edit",playthrough),0)
-        //startActivity(intentFor<CharacterActivity>().putExtra("add_to_playthrough",playthrough))
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

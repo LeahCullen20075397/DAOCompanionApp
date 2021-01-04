@@ -19,4 +19,42 @@
     <string name="hint_characterRace">Character Race</string>
     <string name="background">Please Enter Character Background</string>
     <string name="hint_characterBackground">Character Background</string>
+
+    <string name="button_addChoice">Add Choices</string>
+    <string name="blight">Did you die to end the blight?</string>
+    <string name="hint_blight">(Yes/No)</string>
+    <string name="beast">How did you resolve the problems between the werewolves and the elves?</string>
+    <string name="hint_beast">(Brokered Peace/Sided with werewolves/Sided with elves)</string>
+    <string name="paragon">What happened to the Anvil of the Void?</string>
+    <string name="hint_paragon">(Destroyed/Saved)</string>
+    <string name="orzammar">Who rules Orzammar?</string>
+    <string name="hint_orzammar">(Bhelen/Harrowmont)</string>
+    <string name="circle">Who did you support at the Broken Circle?</string>
+    <string name="hint_circle">(Mages/Templars)</string>
+    <string name="landsmeet">Who rules Ferelden?</string>
+    <string name="hint_landsmeet">(You/Alastair/Anora)</string>
+    <string name="urn">Did you poison the urn?</string>
+    <string name="hint_urn">(Yes/No)</string>
+    <string name="arl">What happened to Connor?</string>
+    <string name="hint_arl">(Died/Survived/Possessed)</string>
+    <string name="archdemon">Who killed the Archdemon?</string>
+    <string name="hint_archdemon">(You/Alastair)</string>
+
+    <string name="button_addRelationship">Add Relationships</string>
+    <string name="alastair">What is your relationship with Alastair?</string>
+    <string name="hint_alastair">(Friends/Enemies/Lovers)</string>
+    <string name="leliana">What is your relationship with Leliana?</string>
+    <string name="hint_leliana">(Friends/Enemies/Lovers)</string>
+    <string name="morrigan">What is your relationship with Morrigan?</string>
+    <string name="hint_morrigan">(Friends/Enemies/Lovers)</string>
+    <string name="oghren">What is your relationship with Oghren?</string>
+    <string name="hint_oghren">(Friends/Enemies/Lovers)</string>
+    <string name="shale">What is your relationship with Shale?</string>
+    <string name="hint_shale">(Friends/Enemies/Lovers)</string>
+    <string name="sten">What is your relationship with Sten?</string>
+    <string name="hint_sten">(Friends/Enemies/Lovers)</string>
+    <string name="wynne">What is your relationship with Wynne?</string>
+    <string name="hint_wynne">(Friends/Enemies/Lovers)</string>
+    <string name="zevran">What is your relationship with Zevran?</string>
+    <string name="hint_zevran">(Friends/Enemies/Lovers)</string>
 </resources>

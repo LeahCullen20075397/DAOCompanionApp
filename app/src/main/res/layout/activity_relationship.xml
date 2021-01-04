@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.CharacterActivity">
+    tools:context=".ChoiceActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -26,13 +26,13 @@
                 android:id="@+id/toolbarAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:titleTextColor="@color/colorPrimary"/>
+                app:titleTextColor="@color/colorPrimaryDark"/>
         </com.google.android.material.appbar.AppBarLayout>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/appBarLayout"
+            android:layout_below="@id/appBarLayout"
             android:fillViewport="true">
 
             <LinearLayout
@@ -41,19 +41,19 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:text="@string/name"
+                    android:text="@string/alastair"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:textSize="20sp"/>
 
                 <EditText
-                    android:id="@+id/name"
+                    android:id="@+id/alastair"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_margin="8dp"
                     android:autofillHints=""
-                    android:hint="@string/hint_characterName"
+                    android:hint="@string/hint_alastair"
                     android:inputType="text"
                     android:maxLength="25"
                     android:maxLines="1"
@@ -62,19 +62,19 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:text="@string/gender"
+                    android:text="@string/leliana"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:textSize="20sp"/>
 
                 <EditText
-                    android:id="@+id/gender"
+                    android:id="@+id/leliana"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_margin="8dp"
                     android:autofillHints=""
-                    android:hint="@string/hint_characterGender"
+                    android:hint="@string/hint_leliana"
                     android:inputType="text"
                     android:maxLength="25"
                     android:maxLines="1"
@@ -83,19 +83,19 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:text="@string/race"
+                    android:text="@string/morrigan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:textSize="20sp"/>
 
                 <EditText
-                    android:id="@+id/race"
+                    android:id="@+id/morrigan"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_margin="8dp"
                     android:autofillHints=""
-                    android:hint="@string/hint_characterRace"
+                    android:hint="@string/hint_morrigan"
                     android:inputType="text"
                     android:maxLength="25"
                     android:maxLines="1"
@@ -104,19 +104,103 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:text="@string/background"
+                    android:text="@string/oghren"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:textSize="20sp"/>
 
                 <EditText
-                    android:id="@+id/background"
+                    android:id="@+id/oghren"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_margin="8dp"
                     android:autofillHints=""
-                    android:hint="@string/hint_characterBackground"
+                    android:hint="@string/hint_oghren"
+                    android:inputType="text"
+                    android:maxLength="25"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="@string/shale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:textSize="20sp"/>
+
+                <EditText
+                    android:id="@+id/shale"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="8dp"
+                    android:autofillHints=""
+                    android:hint="@string/hint_shale"
+                    android:inputType="text"
+                    android:maxLength="25"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="@string/sten"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:textSize="20sp"/>
+
+                <EditText
+                    android:id="@+id/sten"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="8dp"
+                    android:autofillHints=""
+                    android:hint="@string/hint_sten"
+                    android:inputType="text"
+                    android:maxLength="25"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="@string/wynne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:textSize="20sp"/>
+
+                <EditText
+                    android:id="@+id/wynne"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="8dp"
+                    android:autofillHints=""
+                    android:hint="@string/hint_wynne"
+                    android:inputType="text"
+                    android:maxLength="25"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="@string/zevran"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:textSize="20sp"/>
+
+                <EditText
+                    android:id="@+id/zevran"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="8dp"
+                    android:autofillHints=""
+                    android:hint="@string/hint_zevran"
                     android:inputType="text"
                     android:maxLength="25"
                     android:maxLines="1"
@@ -125,7 +209,7 @@
                     android:textSize="14sp" />
 
                 <Button
-                    android:id="@+id/btnAddCharacter"
+                    android:id="@+id/btnAddRelationship"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
@@ -133,7 +217,7 @@
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:stateListAnimator="@null"
-                    android:text="@string/button_addCharacter"
+                    android:text="@string/button_addRelationship"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
             </LinearLayout>

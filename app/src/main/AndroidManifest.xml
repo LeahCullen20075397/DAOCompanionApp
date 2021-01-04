@@ -21,6 +21,8 @@
         </activity>
 
         <activity android:name=".activities.CharacterActivity"/>
+        <activity android:name=".activities.ChoiceActivity"/>
+        <activity android:name=".activities.RelationshipActivity"/>
 
 
     </application>

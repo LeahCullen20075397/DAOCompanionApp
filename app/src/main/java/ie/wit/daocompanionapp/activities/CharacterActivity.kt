@@ -27,18 +27,6 @@ class CharacterActivity : AppCompatActivity(), AnkoLogger {
             character.gender = gender.text.toString()
             character.race = race.text.toString()
             character.background = background.text.toString()
-            /*
-            if (character.name.isNotEmpty() && character.gender.isNotEmpty()
-                && character.race.isNotEmpty() && character.background.isNotEmpty()){
-                info("$name Added!")
-                playthrough.characters.add(character.copy())
-                for (i in playthrough.characters.indices){
-                    info("Character[$i]: ${playthrough.characters[i]}")
-                }
-            }
-            else{
-                toast("Please Enter Character Details...")
-            }*/
 
             setResult(AppCompatActivity.RESULT_OK, Intent().putExtra("character",character))
             finish()
