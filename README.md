@@ -4,7 +4,7 @@ This app is to be used before starting a fresh playthrough of DAO. It's purpose 
 
 <b>Features:</b>
  <p>add playthrough</p>
-     <p>add character to playthrough</p>
+     <n>add character to playthrough
      add choices to playthrough
      add relationships to playthrough
  delete playthroughs
