@@ -5,10 +5,10 @@ This app is to be used before starting a fresh playthrough of DAO. It's purpose 
 <b>Features:</b>
  <p>add playthrough</p>
      <n>add character to playthrough
-     add choices to playthrough
-     add relationships to playthrough
- delete playthroughs
- edit playthroughs
-     edit does not work for characters,choice or relationships
- persistence (playthroughs will be remembered even if the app is closed)
- playthroughs are listed on start up
+     <n>add choices to playthrough
+     <n>add relationships to playthrough
+ <p>delete playthroughs</p>
+ <p>edit playthroughs</p>
+      <n><i>edit does not work for characters,choice or relationships</i>
+ <p>persistence (playthroughs will be remembered even if the app is closed)</p>
+ <p>playthroughs are listed on start up</p>
