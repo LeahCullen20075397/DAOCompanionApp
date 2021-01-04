@@ -32,6 +32,7 @@ class ChoiceActivity: AppCompatActivity(), AnkoLogger {
             choice.archdemon = archdemon.text.toString()
 
             setResult(AppCompatActivity.RESULT_OK, Intent().putExtra("choice",choice))
+            info("Choices were added!")
             finish()
         }
     }

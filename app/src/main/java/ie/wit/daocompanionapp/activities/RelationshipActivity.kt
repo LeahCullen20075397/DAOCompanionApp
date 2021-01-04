@@ -32,6 +32,7 @@ class RelationshipActivity: AppCompatActivity(), AnkoLogger {
             relationship.zevran = zevran.text.toString()
 
             setResult(AppCompatActivity.RESULT_OK, Intent().putExtra("relationship",relationship))
+            info("Relationship added!")
             finish()
         }
     }

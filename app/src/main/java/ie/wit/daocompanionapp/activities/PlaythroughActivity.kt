@@ -11,7 +11,6 @@ import ie.wit.daocompanionapp.models.CharacterModel
 import ie.wit.daocompanionapp.models.ChoiceModel
 import ie.wit.daocompanionapp.models.PlaythroughModel
 import ie.wit.daocompanionapp.models.RelationshipModel
-import kotlinx.android.synthetic.main.activity_character.*
 import kotlinx.android.synthetic.main.activity_playthrough.*
 import kotlinx.android.synthetic.main.activity_playthrough.toolbarAdd
 import org.jetbrains.anko.AnkoLogger
