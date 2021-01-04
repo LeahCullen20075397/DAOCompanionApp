@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import ie.wit.daocompanionapp.R
 import ie.wit.daocompanionapp.models.PlaythroughModel
 import kotlinx.android.synthetic.main.card_playthrough.view.*
-
+/*
+the adapter works together with the playthrough activity & playthrough list to fill the cards with
+the playthrough information to be displayed.
+ */
 interface PlaythroughListener{
     fun onPlaythroughClick(playthrough: PlaythroughModel)
 }

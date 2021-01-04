@@ -1,5 +1,8 @@
 package ie.wit.daocompanionapp.helpers
-
+/*
+this files contains functions to read/write playthroughs to a file. It also checks to see if that
+file exists
+ */
 import android.content.Context
 import android.util.Log
 import java.io.*

@@ -35,26 +35,38 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
         app = application as MainApp
 
         var edit = false
-
+/*
+when you click the playthrough card it will allow you to update the user's name for the playthrough.
+the add button changes to a save button
+ */
         if(intent.hasExtra("playthrough_edit")){
             edit = true
             playthrough = intent.extras?.getParcelable<PlaythroughModel>("playthrough_edit")!!
             playthroughPlayer.setText(playthrough.player)
             btnPlayAdd.setText(R.string.save_playthrough)
         }
-
+/*
+When you click on the add character button, switch activities to characterActivity.
+ */
         btnCharAdd.setOnClickListener {
            startActivityForResult(intentFor<CharacterActivity>(),0)
         }
-
+/*
+when you click on the add choices button, switch activities to choiceActivity.
+ */
         btnChoiceAdd.setOnClickListener {
             startActivityForResult(intentFor<ChoiceActivity>(),1)
         }
-
+/*
+when you click on the add relationship button, switch activities to relationshipActivity.
+ */
         btnRelationshipAdd.setOnClickListener {
             startActivityForResult(intentFor<RelationshipActivity>(),2)
         }
-
+/*
+When the add playthrough button is pressed, add the playthrough and go back to the playthroughlist
+view
+ */
         btnPlayAdd.setOnClickListener {
             playthrough.player = playthroughPlayer.text.toString()
             if(playthrough.player.isEmpty()){
@@ -73,12 +85,18 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
             finish()
         }
     }
-
+/*
+when you are creating a playthrough you have the option to cancel. Also when in editing you
+can also choose to delete the playthrough
+ */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_playthrough, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
+/*
+if either cancel or delete is chosen, go back to the playthrough list or delete the selected
+playthrough
+ */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.item_delete -> {
@@ -91,7 +109,9 @@ class PlaythroughActivity : AppCompatActivity(), AnkoLogger {
         }
         return super.onOptionsItemSelected(item)
     }
-
+/*
+when adding a character/choice/relationship, if they are successful add them to the playthrough
+ */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when(requestCode){

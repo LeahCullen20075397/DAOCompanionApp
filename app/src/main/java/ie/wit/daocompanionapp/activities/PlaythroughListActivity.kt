@@ -13,7 +13,10 @@ import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivityForResult
 
 class PlaythroughListActivity: AppCompatActivity(), PlaythroughListener {
-
+/*
+This class displays the various playthroughs that have been created. It also allows a user to
+click on these cards in order to edit those playthroughs
+ */
     lateinit var app: MainApp
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +31,9 @@ class PlaythroughListActivity: AppCompatActivity(), PlaythroughListener {
         recyclerView.layoutManager = layoutManager
         loadPlaythroughs()
     }
-
+/*
+when a playthrough is clicked, it becomes editable
+ */
     override fun onPlaythroughClick(playthrough: PlaythroughModel) {
         startActivityForResult(intentFor<PlaythroughActivity>().putExtra("playthrough_edit",playthrough),0)
     }
@@ -37,7 +42,9 @@ class PlaythroughListActivity: AppCompatActivity(), PlaythroughListener {
         menuInflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
+/*
+when you click the + button, go to the add playthrough form
+ */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.item_add -> startActivityForResult<PlaythroughActivity>(0)
@@ -49,7 +56,9 @@ class PlaythroughListActivity: AppCompatActivity(), PlaythroughListener {
         loadPlaythroughs()
         super.onActivityResult(requestCode, resultCode, data)
     }
-
+/*
+load up the previosuly named playthroughs
+ */
     private fun loadPlaythroughs(){
         showPlaythroughs(app.playthroughs.findAll())
     }
